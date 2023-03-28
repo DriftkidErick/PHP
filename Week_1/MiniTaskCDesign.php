@@ -4,7 +4,7 @@
 </head>
 <body>
 
-    <h1 style="text-align:center ;">
+    <h1 style="text-align:center ;">  <!--THis is the welcome to the page-->
 
         <?php
             echo "Hello User Welcome to My Week 1 Mini Task C!";
@@ -18,9 +18,9 @@
 
         <?php //This will loop through each animal and 
 
-            foreach ($animals as $animalNames)
+            foreach ($animals as $animalNames) 
             {
-                echo "<li>$animalNames</li>";
+                echo "<li>$animalNames</li>"; //Prints out each 
             }
 
         ?>

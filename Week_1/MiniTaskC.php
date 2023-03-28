@@ -16,7 +16,7 @@
 
 
 //Allows us to reference other page
-require_once 'MiniTaskC.php';
+require_once 'MiniTaskCDesign.php';
 
 ?>
 
