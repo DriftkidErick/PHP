@@ -1,44 +1,24 @@
-<html>
-<head>
+<?php
 
-</head>
-<body>
+//With this page we create an array and then we add the information of the html page
 
-    <h1 style="text-align:center ;">
+    //Making an Array
 
-        <?php
-            echo "Hello User Welcome to My Week 1 Mini Task C!";
-        ?>
+    $animals = [
+        'Dog',
+        'Cat',
+        'Mouse',
+        'Moose',
+        'Turtle',
+        'Taco Bell Dog'
 
-    </h1>
-
-    <p> Here is a list of some random animals </p>
-
-    <ul>
-
-        <?php //This will loop through each animal and 
-
-            foreach ($animals as $animalNames)
-            {
-                echo "<li>$animalNames</li>";
-            }
-
-        ?>
+    ];
 
 
-        </ul>
+//Allows us to reference other page
+require_once 'MiniTaskC.php';
+
+?>
 
 
 
-
-    
-</body>
-</html>
-
-
-<!-- Our Goal here is to 
-    * make an array of animals 
-    * display the names  as list items
-
-    *Personal approach is to try to use a for loop
--->
