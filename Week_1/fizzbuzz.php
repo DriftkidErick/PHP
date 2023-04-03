@@ -11,7 +11,7 @@
     {
         if ($num % 2 == 0 && $num % 3 == 0) //If num is divisable by 2 and 3 
         {
-            return "fizz buzz";
+            return "fizzbuzz";
         }
 
         elseif ($num % 2 == 0) //If num is divisable by 2 print fizz
