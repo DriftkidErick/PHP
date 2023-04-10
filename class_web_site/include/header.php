@@ -89,14 +89,14 @@ li {
 
 <div class="navbar">
 
-    <a href="index.php">Home</a>
+    <a href="../site/index.php">Home</a>
 
     <div class="dropdown">
         <button class="dropbtn" onclick="dropDown()">Assignments
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content" id="myDropdown">
-            <a href="../week1/index.php">Assignment 1</a>
+            <a href="../week1/fizzbuzz.php">Assignment 1</a>
             <a href="../week2/index.php">Assignment 2</a>
             <a href="../week3/index.php">Assignment 3</a>
             <a href="../week4/index.php">Assignment 4</a>

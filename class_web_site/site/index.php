@@ -8,7 +8,7 @@
 <h2>Assingment Overview</h2>
 
     <ul>
-        <li><a href="../week1/index.php">Week 1 - Fizzbuzz</a></li>
+        <li><a href="../week1/fizzbuzz.php">Week 1 - Fizzbuzz</a></li>
         <li><a href="../week2/index.php">Week 2 - Patient Intake Form</a></li>
         <li><a href="../week3/index.php">Week 3 -</a></li>
         <li><a href="../week4/index.php">Week 4 -</a></li>
