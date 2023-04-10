@@ -1,30 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!-- Create a web page that will be used to maintain the solutions to all of your assignments for the course. 
-At a minimum, include:
+<form name="patient" method="post" action="patient.php">
+        
+        <div class="wrapper">
+            <div class="label">
+                <label>First Name:</label>
+            </div>
+            <div>
+                <input type="text" name="first_name" value="" wfd-id="id0">
+            </div>
+            <div class="label">
+                <label>Last Name:</label>
+            </div>
+            <div>
+                <input type="text" name="last_name" value="" "="" wfd-id="id1">
+            </div>
+            <div class="label">
+                <label>Married:</label>
+            </div>
+            <div>
+                <input type="radio" name="married" value="yes" wfd-id="id2">Yes
 
-your name
-a link to your repo on github.com. 
-3 links to resources that you can use to learn PHP
-3 links to resources that you can use to learn Git
-3 links to stuff you enjoy doing outside of learning PHP or Git 
-last date and the time your web site was changed. 
-links to your working lab solutions.
-For now, create placeholders for Weeks 3 through 10.
-The site must be hosted on cs.neit.edu.
+                    
+                <input type="radio" name="married" value="no" wfd-id="id3">No
+                
+            </div>
+            <div class="label">
+                <label>Conditions:</label>
+            </div>
+            <div>
+                                   <input type="checkbox" name="conditions[]" value="High Blood Pressure" wfd-id="id4">High Blood Pressure                                   <input type="checkbox" name="conditions[]" value="Diabetes" wfd-id="id5">Diabetes                                   <input type="checkbox" name="conditions[]" value="Heart Condition" wfd-id="id6">Heart Condition                           </div>
+            <div class="label">
+                <label>Birth Date:</label>
+            </div>
+            <div>
+                <input type="date" name="birth_date" value="" wfd-id="id7">
+                
+                
+            </div>
+            <div class="label">
+                <label>Height:</label>
+            </div>
+            <div>
+            Feet: <input type="text" name="ft" value="" style="width:40px;" wfd-id="id8">
+            Inches: <input type="text" name="inches" value="0" style="width:40px;" wfd-id="id9">
+                
+                
+                
+            </div>
+            <div class="label">
+                <label>Weight (pounds):</label>
+            </div>
+            <div>
+                <input type="text" name="weight" value="" style="width:40px;" wfd-id="id10">
+                
+                
+            </div>
+            <div>
+                &nbsp;
+            </div>
+            <div>
+                <input type="submit" name="storePatient" value="Store Patient Information" wfd-id="id11">
+            </div>
+           
+        </div>
 
-Provide the link to your site in the comments of this assignment.
-All future submissions must include this main site link on cs.neit.edu.
--->
-<nav>
-    <p>TacoBell</p>
-</nav>
-</body>
-</html>
+       
+    </form>
