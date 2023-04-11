@@ -1,5 +1,5 @@
 <?php
-    include __DIR__ . '/../include//header.php'
+    include __DIR__ . '/../include//header.php'; //Included header by TIM HENRY
 ?>
 
     <h2>PHP Resources</h2>
@@ -14,4 +14,4 @@
         <li><a href="https://www.javatpoint.com/php-tutorial"> JavaTPoint PHP Turtorial</a></li>
     </ul>
 
-<?php include __DIR__ . '/../include/footer.php'; ?>
+<?php include __DIR__ . '/../include/footer.php'; //Included footer by TIM HENRY?>

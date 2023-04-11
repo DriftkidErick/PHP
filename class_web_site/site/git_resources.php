@@ -1,5 +1,5 @@
 <?php
-    include __DIR__ . '/../include//header.php'
+    include __DIR__ . '/../include//header.php'; //Included header by TIM HENRY
 ?>
 
     <h2>GIT Resources</h2>
@@ -15,4 +15,4 @@
 
     </ul>
 
-<?php include __DIR__ . '/../include/footer.php'; ?>
+<?php include __DIR__ . '/../include/footer.php'; //Included footer by TIM HENRY ?>

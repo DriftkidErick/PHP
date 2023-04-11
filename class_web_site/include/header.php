@@ -97,7 +97,7 @@ li {
         </button>
         <div class="dropdown-content" id="myDropdown">
             <a href="../week1/fizzbuzz.php">Assignment 1</a>
-            <a href="../week2/index.php">Assignment 2</a>
+            <a href="../week2/bmiDesign.php">Assignment 2</a>
             <a href="../week3/index.php">Assignment 3</a>
             <a href="../week4/index.php">Assignment 4</a>
             <a href="../week5/index.php">Assignment 5</a>

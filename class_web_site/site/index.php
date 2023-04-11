@@ -1,5 +1,5 @@
 <?php
-    include __DIR__ . '/../include//header.php'
+    include __DIR__ . '/../include//header.php'; //Included header by TIM HENRY
 ?>
 
 <h1 style="text-align:center ;">PHP & SQL - Erick Cordon</h1>
@@ -9,7 +9,7 @@
 
     <ul>
         <li><a href="../week1/fizzbuzz.php">Week 1 - Fizzbuzz</a></li>
-        <li><a href="../week2/index.php">Week 2 - Patient Intake Form</a></li>
+        <li><a href="../week2/bmiDesign.php">Week 2 - Patient Intake Form</a></li>
         <li><a href="../week3/index.php">Week 3 -</a></li>
         <li><a href="../week4/index.php">Week 4 -</a></li>
         <li><a href="../week5/index.php">Week 5 -</a></li>
@@ -21,4 +21,4 @@
     </ul>
 
 
-<?php include __DIR__ . '/../include/footer.php'; ?>
+<?php include __DIR__ . '/../include/footer.php'; //Included footer by TIM HENRY ?>

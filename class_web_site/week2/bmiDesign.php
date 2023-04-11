@@ -1,5 +1,7 @@
 <?php
 
+include __DIR__ . '/../include//header.php'; //INCLUDES THE HEADER BY TIM HENRY
+
 require_once 'bmi.php'; //Requires the functions 
 
 //Create and array to store errors
@@ -166,6 +168,6 @@ if (isset($_POST['btnSub'])) //When the Submit buttons is pressed
 
     </form>
 
-
+    <?php include __DIR__ . '/../include/footer.php'; //Included footer by TIM HENRY ?> 
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    include __DIR__ . '/../include//header.php'
+    include __DIR__ . '/../include//header.php'; //Included header by TIM HENRY
 ?>
 <h2>Heres something I like to do on my freetime</h2>
 
@@ -11,4 +11,4 @@
     <li><a href="https://music.apple.com/us/listen-now?l=en-US" target="_blank">Listening to music</a></li>
 </ul>
 
-<?php include __DIR__ . '/../include/footer.php'; ?>
+<?php include __DIR__ . '/../include/footer.php'; //Included footer by TIM HENRY ?>
