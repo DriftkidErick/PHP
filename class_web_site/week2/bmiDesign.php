@@ -110,8 +110,8 @@ if (isset($_POST['btnSub'])) //When the Submit buttons is pressed
     <title>Document</title>
 </head>
 <body>
-    <br>
-    <br>
+    <h1>Patient Intake Form</h1>
+
     <form action="bmiDesign.php" method="post">
         <div>
             <label for="fName">First Name:</label>
