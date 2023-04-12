@@ -1,0 +1,49 @@
+<?php
+ 
+require_once "./account.php";
+
+class CheckingAccount extends Account 
+{
+	const OVERDRAW_LIMIT = -200;
+
+	public function withdrawal($amount) 
+	{
+		// write code here. Return true if withdrawal goes through; false otherwise
+
+		if ($this -> balance - $amount < self::OVERDRAW_LIMIT)
+		{
+			//If the balance is less than -200 do not allow the withdrawl
+			echo "Sorry you cannot withdrwal less than the -200 limit";
+
+		}
+
+		else //if bala is above -200 allow withdrawl
+		{
+			//The balance is above the withdrawl limit
+			$this -> balance = $this -> balance - $amount;
+		}
+
+	} // end withdrawal
+
+	//freebie. I am giving you this code.
+	public function getAccountDetails() 
+	{
+		$accountDetails = "<h2>Checking Account</h2>";
+		$accountDetails .= parent::getAccountDetails();
+		
+		return $accountDetails;
+	}
+}
+
+
+// The code below runs everytime this class loads and 
+// should be commented out after testing.
+
+//$checking = new CheckingAccount ('C123', 1000, '12-20-2019');
+//$checking->withdrawal(200);
+//$checking->deposit(500);
+
+//echo $checking->getAccountDetails();
+//echo $checking->getStartDate();
+    
+?>
