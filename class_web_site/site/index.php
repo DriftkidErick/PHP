@@ -5,7 +5,7 @@
 <h1 style="text-align:center ;">PHP & SQL - Erick Cordon</h1>
 <p> Welcome to my SE266 Webpage. Here you can find all my working PHP projects along with my code.</p>
 
-<h2>Assingment Overview</h2>
+<h2>Assignment Overview</h2>
 
     <ul>
         <li><a href="../week1/fizzbuzz.php">Week 1 - Fizzbuzz</a></li>
