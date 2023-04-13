@@ -1,6 +1,8 @@
 
 <?php
 
+include __DIR__ . '/../include//header.php'; //INCLUDES THE HEADER BY TIM HENRY
+
 // This calls the checking and saving pages
 require_once 'checking.php';
 require_once 'savings.php';
@@ -147,5 +149,8 @@ require_once 'savings.php';
             
         </div>
     </form>
+
+    <?php include __DIR__ . '/../include/footer.php'; //Included footer by TIM HENRY ?> 
+    
 </body>
 </html>
