@@ -12,7 +12,8 @@ class SavingsAccount extends Account
 		if ($this -> balance - $amount < 0)
 		{
 			//Withdrawl cannot pass
-			echo "You cannot have less than $0 in your account";
+			
+			echo "<h4>You cannot have less than $0 in your account</h4>";
 		}
 
 		else

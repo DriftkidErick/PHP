@@ -58,6 +58,7 @@ abstract class Account
 		return "Account ID: " . $this -> accountId . "<br />" . "Balance: $" . $this -> balance . "<br />" . "Start Date: " . $this -> startDate;
 	} // end getAccountDetails
 
-	
+
+		
 } // end account
 ?>

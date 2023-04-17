@@ -13,7 +13,8 @@ class CheckingAccount extends Account
 		if ($this -> balance - $amount < self::OVERDRAW_LIMIT)
 		{
 			//If the balance is less than -200 do not allow the withdrawl
-			echo "Sorry you cannot withdrwal less than the -200 limit";
+			
+			echo "<h4>Sorry you cannot withdrawal less than the -200 limit</h4>";
 
 		}
 
