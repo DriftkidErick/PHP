@@ -24,7 +24,7 @@ if(isset($_GET['action']))
 
     if ($action === "Update")
     {
-        $currentCust = $custDataBase->get
+        $currentCust = $custDataBase->get;
     }
 }
 ?>
