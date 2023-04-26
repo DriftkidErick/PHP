@@ -56,10 +56,61 @@ class CustDB
     }
 
     //Add a person to a DB
-    public function addCustomer($fName,$lname,$dob,$age,$married)
+    public function addCustomer($fName,$lName,$dob,$age,$married)
     {
+        $addSuccessful = false;
+        $custTable =  $this->custData;
+
+        $stmt = $custTable ->prepare("INSERT INTO customer SET fName = :fNameParam, lName = :lnameParam, dob = :dobParam, age = :ageParam, married = :marriedParam");
+
+        //Bind query parameters to method parameter values
+        $boundParams = array(
+            ":fNameParam" => $fName,
+            ":lNameParam" => $lName,
+            ":dobParam" => $dob,
+            ":ageParam" => $age,
+            ":marriedParam" => $married,
+        );
+
+        //Execute query and check to see if rows were returned
+        //if so, the team was successfully added
+        $addSuccessful = ($stmt->execute($boundParams) && $stmt->rowCount() > 0);
+
+        //Returns this to the client
+        return $addSuccessful;
+    }
+
+    public function addCustomer2($fName,$lName,$dob,$age,$married)
+    {
+        $addSuccessful = false;
+        $custTable =  $this->custData;
+
+        $stmt = $custTable ->prepare("INSERT INTO customer SET fName = :fNameParam, lName = :lnameParam, dob = :dobParam, age = :ageParam, married = :marriedParam");
+
+        //Bind query parameters to method parameter values
+        $stmt->bindValue(':fNameParam', $fName);
+        $stmt->bindValue(':lNameParam', $lName);
+        $stmt->bindValue(':dobParam', $dob);
+        $stmt->bindValue(':ageParam', $age);
+        $stmt->bindValue(':marriedParam', $married);
+
+        //Execute query and check to see if rows were returned
+        //if so, the team was successfully added
+        $addSuccessful = ($stmt->execute($boundParams) && $stmt->rowCount() > 0);
+
+        //Returns this to the client
+        return $addSuccessful;
+    }
+
+    public function updateCustomer($id,$fName,$lName,$dob,$age,$married)
+    {
+        $updateSuccessful = false;
+        $custTable = $this->custData;
+
         
     }
+
+
 
 }
 ?>
