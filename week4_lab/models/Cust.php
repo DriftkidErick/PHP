@@ -30,7 +30,7 @@ class Cust
         $this->dob = $theDob;
     }
 
-    public function setAge($theAge)
+    public function setAge($theAge) //Create an age function
     {
         $this->age = $theAge;
     }
@@ -61,7 +61,7 @@ class Cust
         return $this->dob;
     }
 
-    public function getAge()
+    public function getAge() //Create an age function
     {
         return $this->age;
     }
