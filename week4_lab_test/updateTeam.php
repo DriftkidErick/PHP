@@ -83,7 +83,7 @@
          <div class="form-group">
            <label class="control-label col-sm-2" for="fName">First Name:</label>
            <div class="col-sm-10">
-             <input type="text" class="form-control" id="fName" placeholder="Enter First Name" name="fName" value="<?= $fName ?>">
+             <input type="text" class="form-control" id="fName" placeholder="Enter First Name" name="fName" required value="<?= $fName ?>">
 
            </div>
          </div>
@@ -91,14 +91,14 @@
          <div class="form-group">
            <label class="control-label col-sm-2" for="lName">last Name:</label>
            <div class="col-sm-10">
-             <input type="text" class="form-control" id="lName" placeholder="Enter Last Name" name="lName" value="<?= $lName ?>">
+             <input type="text" class="form-control" id="lName" placeholder="Enter Last Name" name="lName" required value="<?= $lName ?>">
            </div>
          </div>
 
          <div class="form-group">
            <label class="control-label col-sm-2" for="dob">Date Of Birth</label>
            <div class="col-sm-10">
-             <input type="date" class="form-control" id="dob" name="dob" value="<?= $dob ?>">
+             <input type="date" class="form-control" id="dob" name="dob" required value="<?= $dob ?>">
            </div>
          </div>
 
