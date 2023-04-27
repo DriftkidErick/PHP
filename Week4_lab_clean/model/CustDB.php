@@ -7,7 +7,7 @@ class CustDB
     //This represents the Database
     private $custData;
 
-    public function __construct(($configFile))
+    public function __construct($configFile)
     {
         //Parse config file, throw and exception if it fails
         if ($ini = parse_ini_file($configFile))
