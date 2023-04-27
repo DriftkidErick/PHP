@@ -1,10 +1,10 @@
 <?php
 
     //This runs everything the page loads
-    require_once "models/CustDB.php";
+    require_once "model/CustDB.php";
 
     //Set up config file and create DB
-    require_once 'models/dbpointer.php';
+    require_once 'model/dbpointer.php';
 
     //Starts with a try catch to connect
     try //Try to preform action

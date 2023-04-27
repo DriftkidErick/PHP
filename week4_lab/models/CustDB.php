@@ -1,4 +1,5 @@
 <?php
+
 include_once 'Cust.php';
 
 class CustDB
@@ -42,7 +43,7 @@ class CustDB
         $custTable = $this->custData; 
 
         //Preparing SQL query
-        $stmt = $custTable->prepare("SELECT * FROM Customer ORDER BY lastname");
+        $stmt = $custTable->prepare("SELECT * FROM patients ORDER BY lastname");
 
         //Execute query and check to see if rows were returned
         if ($stmt->execute() && $stmt->rowCount() > 0)
@@ -61,7 +62,7 @@ class CustDB
         $addSuccessful = false;
         $custTable =  $this->custData;
 
-        $stmt = $custTable ->prepare("INSERT INTO customer SET fName = :fNameParam, lName = :lnameParam, dob = :dobParam, age = :ageParam, married = :marriedParam");
+        $stmt = $custTable ->prepare("INSERT INTO patients SET fName = :fNameParam, lName = :lnameParam, dob = :dobParam, age = :ageParam, married = :marriedParam");
 
         //Bind query parameters to method parameter values
         $boundParams = array(
@@ -85,7 +86,7 @@ class CustDB
         $addSuccessful = false;
         $custTable =  $this->custData;
 
-        $stmt = $custTable ->prepare("INSERT INTO customer SET fName = :fNameParam, lName = :lnameParam, dob = :dobParam, age = :ageParam, married = :marriedParam");
+        $stmt = $custTable ->prepare("INSERT INTO patients SET fName = :fNameParam, lName = :lnameParam, dob = :dobParam, age = :ageParam, married = :marriedParam");
 
         //Bind query parameters to method parameter values
         $stmt->bindValue(':fNameParam', $fName);
@@ -107,10 +108,79 @@ class CustDB
         $updateSuccessful = false;
         $custTable = $this->custData;
 
-        
+        //prepare SQL query with parameteres for Customer information ID is used to make sure we are at the set parameter
+        $stmt = $custTable->prepare("UPDATE patients SET fName = :fNameParam, lName = :lNameParam, dob = :dobParam, age = :ageParam, married = :marriedParam WHERE id = :idParam");
+
+        //Binds the Query parameters to method paramerter values
+        $stmt -> bindValue(':idParam', $id);
+        $stmt -> bindValue('fNameParam', $fName);
+        $stmt -> bindValue('lNameParam', $lName);
+        $stmt -> bindValue('dobParam', $dob);
+        $stmt -> bindValue('ageParam', $age);
+        $stmt -> bindValue('marriedParam', $married);
+       
+        //Execute the query and checlk to see if the rows were returned
+        //if so 
+        $updateSuccessful = ($stmt -> execute() && $stmt->rowCount() > 0);
+
+        //Return status to client
+        return $updateSuccessful;
     }
 
+    public function deleteTeam($id)
+    {
+        $deleteSucessful = false;       // Customer not updated at this point
+        $custTable = $this -> custData; 
 
+        //Prepare the SQL query 
+        //id is used to ensure we delte correct record
+        $stmt = $custTable ->prepare("DELETE FROM patients WHERE id = :idParam");
 
+        //Bind the query param to method param value
+        $stmt ->bindValue(':idParam', $id);
+
+       // Execute query and check to see if rows were returned 
+        // If so, the team was successfully deleted      
+        $deleteSucessful = ($stmt->execute() && $stmt->rowCount() > 0);
+
+        // Return status to client           
+        return $deleteSucessful;
+    }
+    
+    public function getCustomer($id)
+    {
+         $results = [];
+         $custTable = $this->custData;
+
+         //Prepare SQL query
+         $stmt = $custTable->prepare("SELECT id,fName,lName,dob,age,married FROM patients WHERE id =:idParam");
+
+        // Bind query parameter to method parameter value
+        $stmt->bindValue(':idParam', $id);
+       
+        // Execute query and check to see if rows were returned 
+        if ( $stmt->execute() && $stmt->rowCount() > 0 ) 
+        {
+           // if successful, grab the first row returned
+           $results = $stmt->setFetchMode(PDO::FETCH_CLASS, "Customer");
+           $results = $stmt->fetch();   
+        }
+
+        //return results to clients
+        return $results;
+    }
+
+    public function getDatabaseRef()
+    {
+        return $this -> custData;
+    }
+
+    //Clean up any memory allocation
+    public function __destruct()
+    {
+        //Mark the PDO for deletiojn
+        $this->custData = null;
+    }
 }
 ?>
+
