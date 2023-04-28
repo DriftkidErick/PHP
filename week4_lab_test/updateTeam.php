@@ -4,17 +4,26 @@
   require_once "controller/functions.php";
   require_once "model/custDB.php";
 
-  if (isset($_GET['action'])) {
-    $action = filter_input(INPUT_GET, 'action');
-    $id =  filter_input(INPUT_GET, "customerID");
-    if ($action == "Update") {
-      $getCust = getOneCustomer($id);
-      print_r($getCust);
+  //When loading the page (IF its a GET )
+  if (isset($_GET['action'])) 
+  {
+    $action = filter_input(INPUT_GET, 'action'); //Action is set to store the action 
+    $id =  filter_input(INPUT_GET, "customerID"); //Id is stored into the id var 
+
+    if ($action == "Update") 
+    {
+      $getCust = getOneCustomer($id); //This grabs a singular customers ID
+
+      print_r($getCust); //This is for testing and it 
+      
+      //Here based of the information stored in the getOneCustomer() function we read pull the information that is stored in the array
       $fName = $getCust[0]['patientFirstName'];
       $lName = $getCust[0]['patientLastName'];
       $dob = $getCust[0]['patientBirthDate'];
       $married = $getCust[0]['patientMarried'];
-    } else {
+    } 
+    else //sets the information as blank if it is an ADD
+    {
       $fName = "";
       $lName = "";
       $dob = "";
@@ -22,7 +31,8 @@
     }
   }
 
-  if (isset($_POST['action'])) {
+  if (isset($_POST['action'])) 
+  {
 
     $action = filter_input(INPUT_POST, 'action');
     $id =  filter_input(INPUT_POST, "id");
@@ -35,7 +45,9 @@
   if (isPostRequest() && $action == "Add") {
     $add = addCust($fName, $lName, $dob, $married);
     header('Location: viewTeams.php');
-  } elseif (isPostRequest() && $action == "Update") {
+  }
+  elseif (isPostRequest() && $action == "Update")
+  {
     $update = updateCust($id, $fName, $lName, $dob, $married);
     header('Location: viewTeams.php');
   }
@@ -105,6 +117,7 @@
          <div class="form-group">
            <label class="control-label col-sm-2" for="Married">Married:</label>
            <div class="col-sm-10">
+            <!--This is a block to make sure that the radio buttons remeber which button is selected-->
              <?php if ($married == 1) : ?>
                <input type="radio" id="married" name="married" value="0">NO
                <input type="radio" id="married" name="married" value="1" checked>YES
@@ -128,7 +141,7 @@
 
      </form>
 
-     <div class="col-sm-offset-2 col-sm-10"><a href="./viewTeams.php">View Teams</a></div>
+     <div class="col-sm-offset-2 col-sm-10"><a href="./viewTeams.php">View Patients</a></div>
    </div>
    </div>
 

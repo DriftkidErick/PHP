@@ -2,13 +2,13 @@
 
 include (__DIR__ . '/Db.php'); 
 
-function getCustomer()
+function getCustomer() //Function created to be able to pull infromation from SQL DB
 {
     global $db; //references the Db in db
 
     $results = [];
 
-    $stmt = $db->prepare("SELECT * from patients");
+    $stmt = $db->prepare("SELECT * from patients ORDER BY patientLastName");
 
     if ($stmt-> execute() && $stmt->rowCount() > 0)
     {
@@ -19,7 +19,7 @@ function getCustomer()
     
 }
 
-function deleteCust($id)
+function deleteCust($id) //Function created to be able to delete Customer based of their ID
 {
     global $db;
 
@@ -38,7 +38,7 @@ function deleteCust($id)
 
 }
 
-function updateCust($id, $fName,$lName,$dob,$married)
+function updateCust($id, $fName,$lName,$dob,$married) //Function to be able to update the customer infromation
 {
     global $db;
 
@@ -61,7 +61,7 @@ function updateCust($id, $fName,$lName,$dob,$married)
     return $results;
 }
 
-function getOneCustomer($id)
+function getOneCustomer($id) //Function used to grab an individual customer
 {
     global $db; //references the Db in db
 
@@ -81,7 +81,7 @@ function getOneCustomer($id)
     
 }
 
-function addCust( $fName,$lName,$dob,$married)
+function addCust( $fName,$lName,$dob,$married) //Function that is used to add a customer
 {
     global $db;
 
@@ -102,6 +102,11 @@ function addCust( $fName,$lName,$dob,$married)
 
      return $results;
 
+}
+
+function getBday()
+{
+   
 }
 
 ?>
