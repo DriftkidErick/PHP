@@ -125,8 +125,8 @@
                <input type="radio" id="married" name="married" value="0" checked>NO
                <input type="radio" id="married" name="married" value="1">YES
              <?php else : ?>
-               <input type="radio" id="married" name="married" value="0">NO
-               <input type="radio" id="married" name="married" value="1">YES
+               <input type="radio" id="married" name="married" value="0" required>NO
+               <input type="radio" id="married" name="married" value="1" required>YES
              <?php endif; ?>
            </div>
          </div>

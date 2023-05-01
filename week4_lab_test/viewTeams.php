@@ -11,6 +11,7 @@ $customerTb = getCustomer();
 if (isPostRequest()) {
     $id = filter_input(INPUT_POST, 'btnDel');
     deleteCust($id);
+    header("Refresh:0");
 }
 
 ?>
