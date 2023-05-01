@@ -99,8 +99,8 @@ li {
             <a href="../week1/fizzbuzz.php">Assignment 1 - FizzBuzz</a>
             <a href="../week2/bmiDesign.php">Assignment 2 - BMI Calculator</a>
             <a href="../week3/atm_starter.php">Assignment 3 - ATM</a>
-            <a href="../week4/index.php">Assignment 4</a>
-            <a href="../week5/index.php">Assignment 5</a>
+            <a href="../week4/viewTeams.php">Assignment 4 - Patient</a>
+            <a href="../week5/viewTeams.php">Assignment 5 - Patient CRUD</a>
             <a href="../week6/index.php">Assignment 6</a>
             <a href="../week7/index.php">Assignment 7</a>
             <a href="../week8/index.php">Assignment 8</a>
