@@ -1,6 +1,3 @@
 <?php
-    include __DIR__ . '/../include//header.php'
+  header('Location: viewTeams.php');  
 ?>
-<h2>Week 5</h2>
-<p>Welcome this is a placeholder for future assignments</p>
-<?php include __DIR__ . '/../include/footer.php'; ?>

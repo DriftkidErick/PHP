@@ -48,8 +48,7 @@ if (isPostRequest())
                         <th>Date Of Birth</th>
                         <th>Age</th>
                         <th>Married</th>
-                        <th>Update</th>
-                        <th>Delete</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -84,14 +83,7 @@ if (isPostRequest())
                                     echo "YES";
                                 };
                                 ?></td>
-                            <td><a href="updateTeam.php?action=Update&customerID=<?= $currentRecord['id'] ?>">Update</a></td>
-                            <td>
-                                <form action="viewTeams.php" method="post">
-                                    <input type="hidden" name="btnDel" value="<?= $currentRecord['id']; ?>" />
-
-
-                                    <button class="btn glyphicon glyphicon-trash" type="submit"></button>
-                                </form>
+                            
                             </td>
 
                         </tr>
