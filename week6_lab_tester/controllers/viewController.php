@@ -1,6 +1,6 @@
 <?php
     
-    require_once "models/PatientDB.php";
+    require_once "models/patientDB.php";
     require_once "functions.php";
 
     // Set up configuration file and create database
@@ -8,18 +8,19 @@
 
     try 
     {
-        $customerDatabase = new CustomerDB(DB_CONFIG_FILE);
+        $patientDatabase = new PatientDB(DB_CONFIG_FILE);
     } 
-    catch ( Exception $error ) //Catches errors
+    catch ( Exception $error ) 
     {
         echo "<h2>" . $error->getMessage() . "</h2>";
     }   
     // If POST, delete the requested team before listing all teams
     if (isPostRequest()) {
-        $id = filter_input(INPUT_POST, 'patientId');
-        $customerDatabase->deletePatient($id);
-    }
-    
-    $customerListing = $customerDatabase->getPatients();
+        $id = filter_input(INPUT_POST, 'patientID');
+        // $id = $_POST['teamId'];
+        $patientDatabase->deletePatient($id);
 
+    }
+    $patientListing = $patientDatabase->getPatient();
+    
 ?>
