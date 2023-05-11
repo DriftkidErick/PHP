@@ -8,12 +8,12 @@
 <h2>Assignment Overview</h2>
 
     <ul>
-        <li><a href="../week1/fizzbuzz.php">Week 1 - Fizzbuzz</a></li>
+        <li><a href="../week1/fizzbuzz.php" >Week 1 - Fizzbuzz</a></li>
         <li><a href="../week2/bmiDesign.php">Week 2 - Patient Intake Form</a></li>
         <li><a href="../week3/atm_starter.php">Week 3 - ATM</a></li>
-        <li><a href="../week4/viewTeams.php">Week 4 - Patient </a></li>
-        <li><a href="../week5/index.php">Week 5 - Patient CRUD</a></li>
-        <li><a href="../week6/index.php">Week 6 -</a></li>
+        <li><a href="../week4/viewTeams.php" target="_blank">Week 4 - Patient </a></li>
+        <li><a href="../week5/index.php" target="_blank">Week 5 - Patient CRUD</a></li>
+        <li><a href="../week6/index.php" target="_blank">Week 6 - Patient Search</a></li>
         <li><a href="../week7/index.php">Week 7 -</a></li>
         <li><a href="../week8/index.php">Week 8 -</a></li>
         <li><a href="../week9/index.php">Week 9 -</a></li>
