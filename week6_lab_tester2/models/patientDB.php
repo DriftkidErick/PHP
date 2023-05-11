@@ -1,6 +1,6 @@
 <?php
 
-include_once "models/patient.php";
+include_once "patient.php";
 
 class PatientDB
 {
@@ -59,7 +59,7 @@ class PatientDB
         return $results;
     }
 
-    public function addPatient($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
+    public function addPatient($patientFName, $patientLName, $married, $dob) 
     {
         $addSucessful = false;         // Team not added at this point
         $patientTable = $this->patientData;   // Alias for database PDO
@@ -69,10 +69,10 @@ class PatientDB
 
         // Bind query parameters to method parameter values
         $boundParams = array(
-            ":fNameParam" => $patientFirstName,
-            ":lNameParam" => $patientLastName,
-            ":marriedParam" => $patientMarried,
-            ":dobParam" => $patientBirthDate
+            ":fNameParam" => $patientFName,
+            ":lNameParam" => $patientLName,
+            ":marriedParam" => $married,
+            ":dobParam" => $dob,
         );       
         
          // Execute query and check to see if rows were returned 
@@ -83,7 +83,7 @@ class PatientDB
          return $addSucessful;
     }
 
-    public function addPatient2($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
+    public function addPatient2($patientFName, $patientLName, $married, $dob) 
     {
         $addSucessful = false;         // Team not added at this point
         $patientTable = $this->patientData;   // Alias for database PDO
@@ -92,10 +92,10 @@ class PatientDB
         $stmt = $patientTable->prepare("INSERT INTO patients SET patientFirstName = :fNameParam, patientLastName = :lNameParam, patientMarried = :marriedParam, patientBirthDate = :dobParam");
 
         // Bind query parameters to method parameter values
-        $stmt->bindValue(":fNameParam", $patientFirstName);
-        $stmt->bindValue(":lNameParam", $patientLastName);
-        $stmt->bindValue(":marriedParam", $patientMarried);
-        $stmt->bindValue(":dobParam", $patientBirthDate);
+        $stmt->bindValue(":fNameParam", $patientFName);
+        $stmt->bindValue(":lNameParam", $patientLName);
+        $stmt->bindValue(":marriedParam" , $married);
+        $stmt->bindValue(":dobParam", $dob);
 
        
         // Execute query and check to see if rows were returned 
@@ -106,7 +106,7 @@ class PatientDB
          return $addSucessful;
     }
 
-    public function updatePatient($id,$patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
+    public function updatePatient($id,$patientFName, $patientLName, $married, $dob) 
     {
         $updateSucessful = false;        // Team not updated at this point
         $patientTable = $this->patientData;   // Alias for database PDO
@@ -117,10 +117,10 @@ class PatientDB
         
          // Bind query parameters to method parameter values
         $stmt->bindValue(':idParam', $id);
-        $stmt->bindValue(":fNameParam", $patientFirstName);
-        $stmt->bindValue(":lNameParam", $patientLastName);
-        $stmt->bindValue(":marriedParam", $patientMarried);
-        $stmt->bindValue(":dobParam", $patientBirthDate);
+        $stmt->bindValue(":fNameParam", $patientFName);
+        $stmt->bindValue(":lNameParam", $patientLName);
+        $stmt->bindValue(":marriedParam", $married);
+        $stmt->bindValue(":dobParam", $dob);
 
         // Execute query and check to see if rows were returned 
         // If so, the team was successfully updated      
@@ -137,7 +137,7 @@ class PatientDB
 
         // Preparing SQL query 
         //    id is used to ensure we delete correct record
-        $stmt = $patientTable->prepare("DELETE FROM patients WHERE id=:idParam");
+        $stmt = $patientTable->prepare("DELETE FROM patients WHERE id = :idParam");
         
          // Bind query parameter to method parameter value
         $stmt->bindValue(':idParam', $id);

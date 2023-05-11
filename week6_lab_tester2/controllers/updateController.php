@@ -24,18 +24,18 @@
       if ($action == "Update") 
       {
           $currentPatient = $patientDatabase->getPatients($id);
-          $patientFirstName = $currentPatient->getPatientFName();
-          $patientLastName = $currentPatient->getPatientLName();
-          $patientMarried = $currentPatient->getMarried();
-          $patientBirthDate = $currentPatient->getDOB();
+          $patientFName = $currentPatient->getPatientFName();
+          $patientLName = $currentPatient->getPatientLName();
+          $married = $currentPatient->getMarried();
+          $dob = $currentPatient->getDOB();
       } 
       //else it is Add and the user will enter team & dvision
       else 
       {
-          $patientFirstName = "";
-          $patientLastName = "";
-          $patientMarried = "";
-          $patientBirthDate = "";
+          $patientFName = "";
+          $patientLName = "";
+          $married = "";
+          $dob = "";
 
       }
   } // end if GET
@@ -46,19 +46,19 @@
   {
       $action = filter_input(INPUT_POST, 'action');
       $id = filter_input(INPUT_POST, 'patientId');
-      $patientFirstName = filter_input(INPUT_POST, 'fName');
-      $patientLastName = filter_input(INPUT_POST, 'lName');
-      $patientMarried = filter_input(INPUT_POST, 'married');
-      $patientBirthDate = filter_input(INPUT_POST, 'dob');
+      $patientFName = filter_input(INPUT_POST, 'fName');
+      $patientLName = filter_input(INPUT_POST, 'lName');
+      $married = filter_input(INPUT_POST, 'married');
+      $dob = filter_input(INPUT_POST, 'dob');
 
 
       if ($action == "Add") 
       {
-          $result = $patientDatabase->addPatient($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate);
+          $result = $patientDatabase->addPatient($patientFName, $patientLName, $married, $dob);
       } 
       elseif ($action == "Update") 
       {
-          $result = $patientDatabase->updatePatient($id, $patientFirstName, $patientLastName, $patientMarried, $patientBirthDate);
+          $result = $patientDatabase->updatePatient($id, $patientFName, $patientLName, $married, $dob);
       }
 
       // Redirect to team listing on view.php

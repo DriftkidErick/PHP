@@ -51,7 +51,7 @@
                 <!-- Here is a formula to get the current age -->
                 <td>
                     <?php
-                    
+                        
                         $today = date('Y-m-d'); //Sets date from todays date
                         //Grabs DOB from SQL DB and then makes it a date time
                         $patientBirthDate = DateTime::createFromFormat('Y-m-d', $currentPatient->getDOB());
@@ -76,9 +76,12 @@
                 </td>
 
 
-                <td><a href="updateTeam.php?action=Update&teamId=<?= $currentPatient->getPatientId() ?>">Update</a></td> 
+                <td><a href="updateTeam.php?action=Update&patientId=<?= $currentPatient->getPatientId() ?>">Update</a></td> 
                 
-                <td><button class="btn glyphicon glyphicon-trash" type="submit"></button></td>
+                <form action="viewTeams.php" method="post">
+                    <input type="hidden" name="patientId" value="<?= $currentPatient->getPatientId(); ?>">
+                    <td><button class="btn glyphicon glyphicon-trash" name="delete" type="submit"></button></td>
+                </form>
             </tr>
         <?php endforeach; ?>
         </tbody>

@@ -4,10 +4,10 @@ class Patient
 {
 
     private $id;
-    private $patientFirstName;
-    private $patientLastName;
-    private $patientMarried;
-    private $patientBrithDate;
+    private $patientFName;
+    private $patientLName;
+    private $married;
+    private $dob;
 
     public function setPatientId($theId)
     {
@@ -16,22 +16,22 @@ class Patient
 
     public function setPatientFName($fName)
     {
-        $this->patientFirstName = $fName;
+        $this->patientFName = $fName;
     }
 
-    public function setPateintLName($lName)
+    public function setPatientLName($lName)
     {
-        $this->patientLastName = $lName;
+        $this->patientLName = $lName;
     }
 
     public function setDob($bday)
     {
-        $this->patientBrithDate = $bday;
+        $this->dob = $bday;
     }
 
     public function married($status)
     {
-        $this->patientMarried = $status;
+        $this->married = $status;
     }
 
 
@@ -59,7 +59,7 @@ class Patient
 
     public function getDOB()
     {
-        return $this->patientBrithDate;
+        return $this->patientBirthDate;
     }
 
 }
