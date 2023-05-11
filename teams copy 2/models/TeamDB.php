@@ -90,10 +90,10 @@ class TeamDB
     public function addTeam($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
     {
         $addSucessful = false;         // Team not added at this point
-        $teamTable = $this->teamData;   // Alias for database PDO
+        $custTable = $this->custData;   // Alias for database PDO
 
         // Preparing SQL query with parameters for team and division
-        $stmt = $teamTable->prepare("INSERT INTO patients SET patientFirstName = :patientFirstNameParam, patientLastName = :patientLastNameParam, patientMarried = :patientMarriedParam, patientBirthDate = :patientBirthDateParam");
+        $stmt = $custTable->prepare("INSERT INTO patients SET patientFirstName = :patientFirstNameParam, patientLastName = :patientLastNameParam, patientMarried = :patientMarriedParam, patientBirthDate = :patientBirthDateParam");
 
         // Bind query parameters to method parameter values
         $boundParams = array(
@@ -155,6 +155,7 @@ class TeamDB
         $stmt = $custTable->prepare("UPDATE patients SET patientFirstName = :patientFirstNameParam, patientLastName = :patientLastNameParam, patientMarried = :patientMarriedParam, patientBirthDate = :patientBirthDateParam WHERE id=:idParam");
         
          // Bind query parameters to method parameter values
+         $stmt->bindValue(':idParam', $id);
          $stmt->bindValue(':patientFirstNameParam', $patientFirstName);
          $stmt->bindValue(':patientLastNameParam', $patientLastName);
          $stmt->bindValue(':patientMarriedParam', $patientMarried);
@@ -194,7 +195,7 @@ class TeamDB
  
     //*****************************************************
     // Get one team and place it into an associative array
-    public function getTeam ($id) 
+    public function getTeam($id) 
     {
         $results = [];                  // Array to hold results
         $custTable = $this->custData;   // Alias for database PDO

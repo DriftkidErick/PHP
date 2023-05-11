@@ -30,18 +30,14 @@
       if ($action == "Update") 
       {
           $row = $teamDatabase->getTeam($id);
-          $patientFirstName = $row['patientFirstName'];
-          $patientLastName = $row['patientLastName'];
-          $patientBirthDate = $row['patientBirthDate'];
-          $patientMarried = $row['patientMarried'];
+          $teamName = $row['teamName'];
+          $division = $row['division'];
       } 
       //else it is Add and the user will enter team & dvision
       else 
       {
-          $patientFirstName = "";
-          $patientLastName = "";
-          $patientBirthDate = "";
-          $patientMarried = "";
+          $teamName = "";
+          $division = "";
       }
   } // end if GET
 
@@ -51,18 +47,16 @@
   {
       $action = filter_input(INPUT_POST, 'action');
       $id = filter_input(INPUT_POST, 'teamId');
-      $patientFirstName = filter_input(INPUT_POST, 'patientFirstName');
-      $patientLastName = filter_input(INPUT_POST, 'patientLastName');
-      $patientBirthDate = filter_input(INPUT_POST, 'patientBirthDate');
-      $patientMarried = filter_input(INPUT_POST, 'patientMarried');
+      $teamName = filter_input(INPUT_POST, 'team');
+      $division = filter_input(INPUT_POST, 'division');
 
       if ($action == "Add") 
       {
-          $result = $teamDatabase->addTeam($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate);
+          $result = $teamDatabase->addTeam ($teamName, $division);
       } 
       elseif ($action == "Update") 
       {
-          $result = $teamDatabase->updateTeam($id, $patientFirstName, $patientLastName, $patientMarried, $patientBirthDate);
+          $result = $teamDatabase->updateTeam ($id, $teamName, $division);
       }
 
       // Redirect to team listing on view.php

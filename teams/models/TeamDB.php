@@ -70,7 +70,7 @@ class TeamDB
         $teamTable = $this->teamData;   // Alias for database PDO
 
         // Preparing SQL query
-        $stmt = $teamTable->prepare("SELECT * FROM patients ORDER BY patientLastName"); 
+        $stmt = $teamTable->prepare("SELECT * FROM teams ORDER BY teamname"); 
         
         // Execute query and check to see if rows were returned
         if ( $stmt->execute() && $stmt->rowCount() > 0 ) 
@@ -87,20 +87,18 @@ class TeamDB
     // Add a team to database
     // INPUT: team and divison to add
     // RETURNS: True if add is successful, false otherwise
-    public function addTeam($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
+    public function addTeam($team, $division) 
     {
         $addSucessful = false;         // Team not added at this point
         $teamTable = $this->teamData;   // Alias for database PDO
 
         // Preparing SQL query with parameters for team and division
-        $stmt = $teamTable->prepare("INSERT INTO patients SET patientFirstName = :patientFirstNameParam, patientLastName = :patientLastNameParam, patientMarried = :patientMarriedParam, patientBirthDate = :patientBirthDateParam");
+        $stmt = $teamTable->prepare("INSERT INTO teams SET teamName = :teamParam, division = :divisionParam");
 
         // Bind query parameters to method parameter values
         $boundParams = array(
-            ":patientFirstNameParam" => $patientFirstName,
-            ":patientLastNameParam" => $patientLastName,
-            ":patientMarriedParam" => $patientMarried,
-            ":patientBirthDateParam" => $patientBirthDate
+            ":teamParam" => $team,
+            ":divisionParam" => $division
         );       
         
          // Execute query and check to see if rows were returned 
@@ -117,19 +115,17 @@ class TeamDB
     //   Uses alternative style to bind query parameters.
     // INPUT: team and divison to add
     // RETURNS: True if add is successful, false otherwise
-    public function addTeam2($patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
+    public function addTeam2($team, $division) 
     {
         $addSucessful = false;         // Team not added at this point
         $teamTable = $this->teamData;   // Alias for database PDO
 
         // Preparing SQL query with parameters for team and division
-        $stmt = $teamTable->prepare("INSERT INTO patients SET patientFirstName = :patientFirstNameParam, patientLastName = :patientLastNameParam, patientMarried = :patientMarriedParam, patientBirthDate = :patientBirthDateParam");
+        $stmt = $teamTable->prepare("INSERT INTO teams SET teamName = :teamParam, division = :divisionParam");
 
         // Bind query parameters to method parameter values
-        $stmt->bindValue(':patientFirstNameParam', $patientFirstName);
-        $stmt->bindValue(':patientLastNameParam', $patientLastName);
-        $stmt->bindValue(':patientMarriedParam', $patientMarried);
-        $stmt->bindValue(':patientBirthDateParam', $patientBirthDate);
+        $stmt->bindValue(':teamParam', $team);
+        $stmt->bindValue(':divisionParam', $division);
        
         // Execute query and check to see if rows were returned 
         // If so, the team was successfully added
@@ -145,21 +141,19 @@ class TeamDB
     //        new value for team name
     //        new value for division
     // RETURNS: True if update is successful, false otherwise
-    public function updateTeam ($id, $patientFirstName, $patientLastName, $patientMarried, $patientBirthDate) 
+    public function updateTeam ($id, $team, $division) 
     {
         $updateSucessful = false;        // Team not updated at this point
         $teamTable = $this->teamData;   // Alias for database PDO
 
         // Preparing SQL query with parameters for team and division
         //    id is used to ensure we update correct record
-        $stmt = $teamTable->prepare("UPDATE patients SET patientFirstName = :patientFirstNameParam, patientLastName = :patientLastNameParam, patientMarried = :patientMarriedParam, patientBirthDate = :patientBirthDateParam WHERE id=:idParam");
+        $stmt = $teamTable->prepare("UPDATE teams SET teamName = :teamParam, division = :divisionParam WHERE id=:idParam");
         
          // Bind query parameters to method parameter values
         $stmt->bindValue(':idParam', $id);
-        $stmt->bindValue(':patientFirstNameParam', $patientFirstName);
-        $stmt->bindValue(':patientLastNameParam', $patientLastName);
-        $stmt->bindValue(':patientMarriedParam', $patientMarried);
-        $stmt->bindValue(':patientBirthDateParam', $patientBirthDate);
+        $stmt->bindValue(':teamParam', $team);
+        $stmt->bindValue(':divisionParam', $division);
 
         // Execute query and check to see if rows were returned 
         // If so, the team was successfully updated      
@@ -180,7 +174,7 @@ class TeamDB
 
         // Preparing SQL query 
         //    id is used to ensure we delete correct record
-        $stmt = $teamTable->prepare("DELETE FROM patients WHERE id=:idParam");
+        $stmt = $teamTable->prepare("DELETE FROM teams WHERE id=:idParam");
         
          // Bind query parameter to method parameter value
         $stmt->bindValue(':idParam', $id);
@@ -202,7 +196,7 @@ class TeamDB
 
         // Preparing SQL query 
         //    id is used to ensure we delete correct record
-        $stmt = $teamTable->prepare("SELECT id, patientFirstName, patientLastName, patientMarried, patientBirthDate FROM patients WHERE id=:idParam");
+        $stmt = $teamTable->prepare("SELECT id, teamName, division FROM teams WHERE id=:idParam");
 
          // Bind query parameter to method parameter value
          $stmt->bindValue(':idParam', $id);

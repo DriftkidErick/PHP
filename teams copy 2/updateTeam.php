@@ -14,40 +14,40 @@
          </div>
          <p></p>
          <div class="form-group">
-           <label class="control-label col-sm-2" for="fName">First Name:</label>
+           <label class="control-label col-sm-2" for="patientFirstName">First Name:</label>
            <div class="col-sm-10">
-             <input type="text" class="form-control" id="fName" placeholder="Enter First Name" name="fName" required value="<?= $patientFirstName ?>">
+             <input type="text" class="form-control" id="patientFirstName" placeholder="Enter First Name" name="patientFirstName" required value="<?= $patientFirstName ?>">
 
            </div>
          </div>
 
          <div class="form-group">
-           <label class="control-label col-sm-2" for="lName">last Name:</label>
+           <label class="control-label col-sm-2" for="patientLastName">last Name:</label>
            <div class="col-sm-10">
-             <input type="text" class="form-control" id="lName" placeholder="Enter Last Name" name="lName" required value="<?= $patientLastName ?>">
+             <input type="text" class="form-control" id="patientLastName" placeholder="Enter Last Name" name="patientLastName" required value="<?= $patientLastName ?>">
            </div>
          </div>
 
          <div class="form-group">
-           <label class="control-label col-sm-2" for="dob">Date Of Birth</label>
+           <label class="control-label col-sm-2" for="patientBirthDate">Date Of Birth</label>
            <div class="col-sm-10">
-             <input type="date" class="form-control" id="dob" name="dob" required value="<?= $patientBirthDate ?>">
+             <input type="date" class="form-control" id="patientBirthDate" name="patientBirthDate" required value="<?= $patientBirthDate ?>">
            </div>
          </div>
 
          <div class="form-group">
-           <label class="control-label col-sm-2" for="Married">Married:</label>
+           <label class="control-label col-sm-2" for="patientMarried">Married:</label>
            <div class="col-sm-10">
             <!--This is a block to make sure that the radio buttons remeber which button is selected-->
              <?php if ($patientMarried == 1) : ?>
-               <input type="radio" id="married" name="married" value="0">NO
-               <input type="radio" id="married" name="married" value="1" checked>YES
+               <input type="radio" id="patientMarried" name="patientMarried" value="0">NO
+               <input type="radio" id="patientMarried" name="patientMarried" value="1" checked>YES
              <?php elseif ($patientMarried == 0) : ?>
-               <input type="radio" id="married" name="married" value="0" checked>NO
-               <input type="radio" id="married" name="married" value="1">YES
+               <input type="radio" id="patientMarried" name="patientMarried" value="0" checked>NO
+               <input type="radio" id="patientMarried" name="patientMarried" value="1">YES
              <?php else : ?>
-               <input type="radio" id="married" name="married" value="0" required>NO
-               <input type="radio" id="married" name="married" value="1" required>YES
+               <input type="radio" id="patientMarried" name="patientMarried" value="0" required>NO
+               <input type="radio" id="patientMarried" name="patientMarried" value="1" required>YES
              <?php endif; ?>
            </div>
          </div>

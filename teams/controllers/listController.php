@@ -26,17 +26,17 @@
     // If POST & SEARCH, only fetch the specified teams       
     if (isset($_POST["Search"]))
     {
-        $patientFirstName="";
-        $patientLastName="";
-        if ($_POST["fieldName"] == "patientFirstName")
+        $teamName="";
+        $division="";
+        if ($_POST["fieldName"] == "teamName")
         {
-            $patientFirstName = $_POST['fieldValue'];
+            $teamName = $_POST['fieldValue'];
         }
         else
         {
-            $patientLastName = $_POST['fieldValue'];
+            $division = $_POST['fieldValue'];
         }
-        $teamListing = $teamDatabase->searchTeams($patientFirstName, $patientLastName);
+        $teamListing = $teamDatabase->searchTeams($teamName, $division);
     }
     // If POST & DELETE, delete the requested team before fetching all teams       
     elseif (isset($_POST["deleteTeam"]))
@@ -56,10 +56,10 @@
     // This is a quick sorting hack that does not use
     // either the page form or a database query.
     // It sorts based on the associative array keys.
-    // $teams  = array_column($teamListing, 'teamName');
-    // $division = array_column($teamListing, 'division');
+    $teams  = array_column($teamListing, 'teamName');
+    $division = array_column($teamListing, 'division');
 
-    // array_multisort($division, SORT_ASC, $teams, SORT_ASC, $teamListing);
+    array_multisort($division, SORT_ASC, $teams, SORT_ASC, $teamListing);
 
 // Preliminaries are done, load HTML page header
  //   include_once __DIR__ . "/header.php";

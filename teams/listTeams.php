@@ -7,14 +7,14 @@
 
 
 ?>
-    <h2>Search for Patient</h2>
+    <h2>Search for Team</h2>
   <form action="#" method="post">
       <input type="hidden" name="action" value="search" />
       <label>Search by Field:</label>
        <select name="fieldName">
               <option value="">Select One</option>
-              <option value="patientFirstName">First Name</option>
-              <option value="patientLastName">Last Name</option>              
+              <option value="teamName">Team Name</option>
+              <option value="division">Division</option>              
           </select>
        <input type="text" name="fieldValue" />
       <button type="submit" name="Search">Search</button>     
@@ -38,16 +38,15 @@
 </form>  
 </div>
     <div class="col-sm-offset-2 col-sm-10">
-        <h1>Patient</h1>
+        <h1>NFL Teams</h1>
         <br />
-        <a href="updateTeam.php?action=Add">Add New Patient</a>      
+        <a href="updateTeam.php?action=Add">Add New Team</a>      
     <table class="table table-striped">
         <thead>
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Married</th>
-                <th>BirthDate</th>
+                <th>Team Name</th>
+                <th>Division</th>
+                <th>Update</th>
             </tr>
         </thead>
         <tbody>
@@ -58,17 +57,10 @@
                     <form action="listTeams.php" method="post">
                         <input type="hidden" name="teamId" value="<?= $row['id']; ?>" />
                         <button class="btn glyphicon glyphicon-trash" name="deleteTeam" type="submit"></button>
-                        <?php echo $row['patientFirstName']; ?>
+                        <?php echo $row['teamName']; ?>
                     </form>   
                 </td>
-
-                <td><?php echo $row['patientLastName']; ?></td> 
-
-                <td><?= $row['patientMarried']?></td>
-
-                <td><?=$row['patientBirthDate']?></td>
-
-
+                <td><?php echo $row['division']; ?></td> 
                 <td><a href="updateTeam.php?action=Update&teamId=<?= $row['id'] ?>">Update</a></td> 
                 
             </tr>

@@ -44,23 +44,23 @@
         </thead>
         <tbody>
       
-        <?php foreach ($custListing as $currentRecord): ?>
+        <?php foreach ($custListing as $row): ?>
             <tr>
                 <td>
-                <span type="hidden" name="teamId" value="<?= $currentRecord['id']; ?>"></span>
-                <?= $currentRecord['id']; ?>
+                <span type="hidden" name="teamId" value="<?= $row['id']; ?>"></span>
+                <?= $row['id']; ?>
                 </td>
 
-                <td><?= $currentRecord['patientFirstName']; ?></td>
-                <td><?= $currentRecord['patientLastName']; ?></td>
-                <td><?= $currentRecord['patientBirthDate']; ?></td>
+                <td><?= $row['patientFirstName']; ?></td>
+                <td><?= $row['patientLastName']; ?></td>
+                <td><?= $row['patientBirthDate']; ?></td>
 
                 <td>
                     <?php
                     
                         $today = date('Y-m-d'); //Sets date from todays date
                         //Grabs DOB from SQL DB and then makes it a date time
-                        $patientBirthDate = DateTime::createFromFormat('Y-m-d', $currentRecord['patientBirthDate']);
+                        $patientBirthDate = DateTime::createFromFormat('Y-m-d', $row['patientBirthDate']);
                         //From Here we calculate the difference
                         $dateDiff = date_diff($patientBirthDate, date_create($today));
                         //Echo out the years only
@@ -69,7 +69,7 @@
 
 
                 <td><?php
-                    if ($currentRecord['patientMarried'] == 0) {
+                    if ($row['patientMarried'] == 0) {
                         echo "NO";
                     } else {
                         echo "YES";
@@ -77,10 +77,10 @@
                     ?>
                 </td>
 
-                <td><a href="updateTeam.php?action=Update&customerID=<?= $currentRecord['id'] ?>">Update</a></td>
+                <td><a href="updateTeam.php?action=Update&teamId=<?= $row['id'] ?>">Update</a></td>
                 <td>
                     <form action="listTeams.php" method="post">
-                        <input type="hidden" name="deleteTeam" value="<?= $currentRecord['id']; ?>" />
+                        <input type="hidden" name="deleteTeam" value="<?= $row['id']; ?>" />
 
 
                         <button class="btn glyphicon glyphicon-trash" type="submit"></button>

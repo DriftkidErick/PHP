@@ -29,11 +29,11 @@
       $id = filter_input(INPUT_GET, 'teamId', );
       if ($action == "Update") 
       {
-          $currentRecord = $custDatabase->getTeam($id);
-          $patientFirstName = $currentRecord['patientFirstName'];
-          $patientLastName = $currentRecord['patientLastName'];
-          $patientMarried = $currentRecord['patientMarried'];
-          $patientBirthDate = $currentRecord['patientBirthDate'];
+          $row = $custDatabase->getTeam($id);
+          $patientFirstName = $row['patientFirstName'];
+          $patientLastName = $row['patientLastName'];
+          $patientMarried = $row['patientMarried'];
+          $patientBirthDate = $row['patientBirthDate'];
       } 
       //else it is Add and the user will enter team & dvision
       else 
@@ -51,10 +51,10 @@
   {
       $action = filter_input(INPUT_POST, 'action');
       $id = filter_input(INPUT_POST, 'teamId');
-      $patientFirstName = filter_input(INPUT_POST, 'fName');
-      $patientLastName = filter_input(INPUT_POST, 'lName');
-      $patientMarried = filter_input(INPUT_POST, 'married');
-      $patientBirthDate = filter_input(INPUT_POST, 'dob');
+      $patientFirstName = filter_input(INPUT_POST, 'patientFirstName');
+      $patientLastName = filter_input(INPUT_POST, 'patientLastName');
+      $patientMarried = filter_input(INPUT_POST, 'patientMarried');
+      $patientBirthDate = filter_input(INPUT_POST, 'patientBirthDate');
 
       if ($action == "Add") 
       {

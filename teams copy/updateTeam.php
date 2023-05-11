@@ -9,25 +9,50 @@
 <form class="form-horizontal" action="updateTeam.php" method="post">
     
     <div class="panel panel-primary">
-    <div class="panel-heading"><h4><?= $action; ?> Team</h4></div>
+    <div class="panel-heading"><h4><?= $action; ?> Patient</h4></div>
     <p></p>
+
     <div class="form-group">
-      <label class="control-label col-sm-2" for="team name">Team Name:</label>
+      <label class="control-label col-sm-2" for="patientFirstName">First Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="team" placeholder="Enter team name" name="team" value="<?= $teamName; ?>">
+        <input type="text" class="form-control" id="patientFirstName" placeholder="Enter First Name" name="patientFirstName" value="<?= $patientFirstName; ?>">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Division:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="division" placeholder="Enter division" name="division" value="<?= $division; ?>">
+      <label class="control-label col-sm-2" for="patientLastName">Last Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="patientLastName" placeholder="Enter Last Name" name="patientLastName" value="<?= $patientLastName; ?>">
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="patientBirthDate">BirthDate:</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="patientBirthDate" name="patientBirthDate" value="<?= $patientBirthDate; ?>">
+      </div>
+    </div>
+
+    <div class="form-group">
+           <label class="control-label col-sm-2" for="patientMarried">Married:</label>
+           <div class="col-sm-10">
+            <!--This is a block to make sure that the radio buttons remeber which button is selected-->
+             <?php if ($patientMarried == 1) : ?>
+               <input type="radio" id="patientMarried" name="patientMarried" value="0">NO
+               <input type="radio" id="patientMarried" name="patientMarried" value="1" checked>YES
+             <?php elseif ($patientMarried == 0) : ?>
+               <input type="radio" id="patientMarried" name="patientMarried" value="0" checked>NO
+               <input type="radio" id="patientMarried" name="patientMarried" value="1">YES
+             <?php else : ?>
+               <input type="radio" id="patientMarried" name="patientMarried" value="0" required>NO
+               <input type="radio" id="patientMarried" name="patientMarried" value="1" required>YES
+             <?php endif; ?>
+           </div>
+         </div>
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default"><?php echo $action; ?> Team</button>
+        <button type="submit" class="btn btn-default"><?php echo $action; ?> Patient</button>
       </div>
     </div>
 </div>
