@@ -60,8 +60,21 @@ class TeamDBSearcher extends TeamDB
             {
                 $sqlQuery .= " AND ";
             }
-            $sqlQuery .= "  patientMarried LIKE :patientMarriedParam";
-            $binds['patientMarriedParam'] = '%'.$patientMarried.'%';
+
+            if (strtolower($patientMarried) === "yes") 
+            {
+                $sqlQuery .= "patientMarried = :patientMarriedParam";
+                $binds['patientMarriedParam'] = '1';
+            }
+            else if (strtolower($patientMarried) === "no") 
+            {
+                $sqlQuery .= "patientMarried = :patientMarriedParam";
+                $binds['patientMarriedParam'] = '0';
+            }
+            else 
+            {
+                echo "Please enter yes or no only";
+            }
         }
     
        

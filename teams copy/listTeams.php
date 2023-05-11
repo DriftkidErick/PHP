@@ -19,7 +19,7 @@
           </select>
        <input type="text" name="fieldValue" />
       <button type="submit" name="Search">Search</button>     
-  </form>      
+  </form>    
   
 </div>
     <div class="col-sm-offset-2 col-sm-10">
