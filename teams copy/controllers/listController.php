@@ -28,15 +28,21 @@
     {
         $patientFirstName="";
         $patientLastName="";
+        $patientMarried="";
+
         if ($_POST["fieldName"] == "patientFirstName")
         {
             $patientFirstName = $_POST['fieldValue'];
         }
-        else
+        else if ($_POST["fieldName"] == "patientLastName")
         {
             $patientLastName = $_POST['fieldValue'];
         }
-        $teamListing = $teamDatabase->searchTeams($patientFirstName, $patientLastName);
+        else
+        {
+            $patientMarried = $_POST['fieldValue'];
+        }
+        $teamListing = $teamDatabase->searchTeams($patientFirstName, $patientLastName, $patientMarried);
     }
     // If POST & DELETE, delete the requested team before fetching all teams       
     elseif (isset($_POST["deleteTeam"]))

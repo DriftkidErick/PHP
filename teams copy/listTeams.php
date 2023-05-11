@@ -14,28 +14,13 @@
        <select name="fieldName">
               <option value="">Select One</option>
               <option value="patientFirstName">First Name</option>
-              <option value="patientLastName">Last Name</option>              
+              <option value="patientLastName">Last Name</option>
+              <option value="patientMarried">Married</option>               
           </select>
        <input type="text" name="fieldValue" />
       <button type="submit" name="Search">Search</button>     
   </form>      
-  <div style="background-color: #fff0cc; padding: 10px;">
-
-  <h2>Sort Teams [<em>not implemented</em>]</h2>
-<form  action="#" method="post">
-    <input type="hidden" name="action" value="sort">
-       <label>Sort By Field:&nbsp;&nbsp;&nbsp;</label>
-       <select name="fieldName">
-              <option value="">Select One</option>
-              <option value="teamName">Team Name</option>
-              <option value="division">Division</option>
-              
-          </select>
-       <input type="radio" name="fieldValue" value="ASC" checked />Ascending
-       <input type="radio" name="fieldValue" value="DESC" />Descending
-       
-      <button type="submit"  name="sortTeam">Sort</button>
-</form>  
+  
 </div>
     <div class="col-sm-offset-2 col-sm-10">
         <h1>Patient</h1>

@@ -8,7 +8,7 @@ class TeamDBSearcher extends TeamDB
 
     // Allows user to search for either team, division or both
     // INPUT: team and/or division to search for
-    function searchTeams ($patientFirstName, $patientLastName) //$patientMarried) 
+    function searchTeams ($patientFirstName, $patientLastName, $patientMarried) 
     {
         // We set up all the necessary variables here 
         // to ensure they are scoped for the entire function
@@ -50,19 +50,19 @@ class TeamDBSearcher extends TeamDB
             $binds['patientLastNameParam'] = '%'.$patientLastName.'%';
         }
 
-        // if ($patientMarried != "") {
-        //     if ($isFirstClause)
-        //     {
-        //         $sqlQuery .=  " WHERE ";
-        //         $isFirstClause = false;
-        //     }
-        //     else
-        //     {
-        //         $sqlQuery .= " AND ";
-        //     }
-        //     $sqlQuery .= "  patientMarried LIKE :patientMarried";
-        //     $binds['patientMarriedParam'] = '%'.$patientMarried.'%';
-        // }
+        if ($patientMarried != "") {
+            if ($isFirstClause)
+            {
+                $sqlQuery .=  " WHERE ";
+                $isFirstClause = false;
+            }
+            else
+            {
+                $sqlQuery .= " AND ";
+            }
+            $sqlQuery .= "  patientMarried LIKE :patientMarriedParam";
+            $binds['patientMarriedParam'] = '%'.$patientMarried.'%';
+        }
     
        
         // Create query object
