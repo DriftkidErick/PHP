@@ -47,29 +47,52 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Married</th>
+                <th>Age</th>
                 <th>BirthDate</th>
+                <th>Update</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
       
         <?php foreach ($teamListing as $row): ?>
             <tr>
+                
+                <td><?php echo $row['patientFirstName']; ?></td>
+                <td><?php echo $row['patientLastName']; ?></td> 
+
+                <td><?php
+                    if ($row['patientMarried'] == 0) {
+                        echo "NO";
+                    } else {
+                        echo "YES";
+                    };
+                    ?>
+                </td>
+
+                <td>
+                    <?php
+                    
+                        $today = date('Y-m-d'); //Sets date from todays date
+                        //Grabs DOB from SQL DB and then makes it a date time
+                        $patientBirthDate = DateTime::createFromFormat('Y-m-d', $row['patientBirthDate']);
+                        //From Here we calculate the difference
+                        $dateDiff = date_diff($patientBirthDate, date_create($today));
+                        //Echo out the years only
+                        echo $dateDiff->format('%y');?>
+                </td>
+
+                <td><?=$row['patientBirthDate']?></td>
+
+                <td><a href="updateTeam.php?action=Update&teamId=<?= $row['id'] ?>">Update</a></td> 
+
                 <td>
                     <form action="listTeams.php" method="post">
                         <input type="hidden" name="teamId" value="<?= $row['id']; ?>" />
                         <button class="btn glyphicon glyphicon-trash" name="deleteTeam" type="submit"></button>
-                        <?php echo $row['patientFirstName']; ?>
+                        
                     </form>   
                 </td>
-
-                <td><?php echo $row['patientLastName']; ?></td> 
-
-                <td><?= $row['patientMarried']?></td>
-
-                <td><?=$row['patientBirthDate']?></td>
-
-
-                <td><a href="updateTeam.php?action=Update&teamId=<?= $row['id'] ?>">Update</a></td> 
                 
             </tr>
         <?php endforeach; ?>
