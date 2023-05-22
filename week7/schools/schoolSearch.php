@@ -2,6 +2,12 @@
 
     include_once __DIR__ . "/model/Schools.php";
     include_once __DIR__ . "/include/functions.php";
+
+    //    If the user is not logged in send that back to the login
+    If (!isUserLoggedIn())
+    {
+        header('Location: login.php');
+    }
    
     $configFile = __DIR__ . '/../schools/model/dbconfig.ini';
     try //To connect with the schools DB and create a new schools OBJ
@@ -13,7 +19,7 @@
         echo "<h2>" . $error->getMessage() . "</h2>";
     }   
 
-    $schoolListing = [];
+    $schoolListing = []; //array to store info
     $schoolName = "";
     $city = "";
     $state = "";
@@ -21,15 +27,15 @@
 
     if (isPostRequest()) 
     {
-        if (isset($schoolName))
+        if (isset($schoolName)) //If they search in the SchoolName section
         {
             $schoolName = $_POST['schoolName'];
         }
-        if (isset($city))
+        if (isset($city)) //If they search City section
         {
             $city = $_POST['schoolCity'];
         }
-        if (isset($state))
+        if (isset($state)) //If they search in the State section
         {
             $state = $_POST['schoolState'];
         }
@@ -65,7 +71,7 @@
     <div>
         <h2>Schools</h2>
         <br>    
-        <table>
+        <table class="clean-table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -76,13 +82,15 @@
             </thead>
             
             <tbody>
-                <?php foreach ($schoolListing as $row) : ?>
+                <!-- Print out all the rows and colums -->
+                <?php foreach ($schoolListing as $row) : ?> 
                     <tr>
-                        <td>
-                            <form action="schoolSearch.php" method="post">
+                        <form action="schoolSearch.php" method="post">
                                 <input type="hidden" name="schoolID" value="<?= $row['id']; ?>" />
+                        </form>
 
-                            </form>
+                        <td>
+                        <?= $row['id']; ?>
                         </td>
                         <td><?= $row['schoolName']; ?></td>
                         <td><?= $row['schoolCity']; ?></td>

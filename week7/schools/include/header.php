@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- Link to css cleanup -->
+    <link rel="stylesheet" href="cleanUp.css"> 
 </head>
 
 <body>
@@ -21,10 +23,7 @@
         <span class="navbar-brand">School Name Management</span>
       </div>
 
-      <ul class="nav navbar-nav navbar-middle">
-        <li><a href="schoolSearch.php">Search</a></li>
-        <li><a href="schoolUpload.php">Upload</a></li>
-      </ul>
+      
       <?php
         // We want to hide the Logout button if the user is not logged in
         // That means we are on the Login page
@@ -34,6 +33,11 @@
         { ?>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="logoff.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-middle"> 
+              <!-- These here are links to both the search and upload only work when the user is logged in-->
+              <li><a href="schoolSearch.php">Search</a></li>
+              <li><a href="schoolUpload.php">Upload</a></li>
             </ul>
             <?php
         } 
