@@ -19,18 +19,15 @@
         //echo " hi";
         $tmp_name = $_FILES['fileToUpload']['tmp_name'];
 
-        $path = getcwd() . DIRECTORY_SEPARATOR . 'uploads';
+        $path = getcwd() . DIRECTORY_SEPARATOR . 'upload';
         
         $new_name = $path . DIRECTORY_SEPARATOR . $_FILES['fileToUpload']['name'];
-        
-        move_uploaded_file($tmp_name, $new_name);
 
-        //echo $new_name;
+        move_uploaded_file($tmp_name, $new_name);
 
         $schoolData-> insertSchoolsFromFile($new_name);
 
     }
-
 
     include_once __DIR__ . "/include/header.php"; 
 
