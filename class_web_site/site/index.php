@@ -14,7 +14,7 @@
         <li><a href="../week4/viewTeams.php" target="_blank">Week 4 - Patient </a></li>
         <li><a href="../week5/index.php" target="_blank">Week 5 - Patient CRUD</a></li>
         <li><a href="../week6/index.php" target="_blank">Week 6 - Patient Search</a></li>
-        <li><a href="../week7/index.php">Week 7 -</a></li>
+        <li><a href="../week7/index.php" target="_blank">Week 7 - School Search</a></li>
         <li><a href="../week8/index.php">Week 8 -</a></li>
         <li><a href="../week9/index.php">Week 9 -</a></li>
         <li><a href="../week10/index.php">Week 10 -</a></li>

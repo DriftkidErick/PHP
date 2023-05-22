@@ -102,7 +102,7 @@ li {
             <a href="../week4/viewTeams.php" target="_blank">Assignment 4 - Patient</a>
             <a href="../week5/viewTeams.php" target="_blank">Assignment 5 - Patient CRUD</a>
             <a href="../week6/index.php" target="_blank">Assignment 6 - Patient Search</a>
-            <a href="../week7/index.php">Assignment 7</a>
+            <a href="../week7/index.php" target="_blank">Assignment 7 - School Search</a>
             <a href="../week8/index.php">Assignment 8</a>
             <a href="../week9/index.php">Assignment 9</a>
             <a href="../week10/index.php">Assignment 10</a> 
