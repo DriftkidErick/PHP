@@ -13,6 +13,7 @@
       <label>Search by Field:</label>
        <select name="fieldName">
               <option value="">Select One</option>
+              <!-- Here we are allowing users to search patients based off of options -->
               <option value="patientFirstName">First Name</option>
               <option value="patientLastName">Last Name</option>
               <option value="patientMarried">Married</option>              
