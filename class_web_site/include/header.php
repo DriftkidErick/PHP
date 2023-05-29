@@ -104,8 +104,8 @@ li {
             <a href="../week6/index.php" target="_blank">Assignment 6 - Patient Search</a>
             <a href="../week7/index.php" target="_blank">Assignment 7 - School Search</a>
             <a href="../week8/index.php">Assignment 8</a>
-            <a href="../week9/index.php">Assignment 9</a>
-            <a href="../week10/index.php">Assignment 10</a> 
+            <a href="../week9/index.php">Assignment 9 - Final Proposal</a>
+            <a href="../week10/index.php"target="_blank">Assignment 10 - Library PHP Final</a> 
         </div>
     </div> 
 
