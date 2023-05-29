@@ -8,7 +8,7 @@
 <p></p>
 <form class="form-horizontal" action="updateTeam.php" method="post">
     
-    <div class="panel panel-primary">
+    <div class="panel panel-info">
     <div class="panel-heading"><h4><?= $action; ?> Book</h4></div>
     <p></p>
 
@@ -51,20 +51,20 @@
     
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default"><?php echo $action; ?> Book</button>
+        <button type="submit" class="btn btn-primary"><?php echo $action; ?> Book</button>
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-primary"><a href="./listTeams.php" style="color:white">View Books</a></div></button>
       </div>
     </div>
 </div>
-    <p></p>
-    <div class="panel panel-warning">
-    <div class="panel-heading"><strong>This is for testing and verification:</strong></div>    
-        Action: <input type="text" name="action" value="<?= $action; ?>">
-        Book ID: <input type="text" name="teamId" value="<?= $id; ?>">
-      </div>
+
 
   </form>
   
-  <div class="col-sm-offset-2 col-sm-10"><a href="./listTeams.php">View Books</a></div>
 </div>
 </div>
 

@@ -7,7 +7,7 @@
     <?php 
         if ($message)
         {   ?>
-            <div style="background-color: yellow; padding: 10px; border: solid 1px black;"> 
+            <div style="background-color: #f5f5f5; padding: 20px; border: solid 1px black;"> 
            <?php echo $message; ?>
            </div>
         <?php } ?>
@@ -28,7 +28,7 @@
             </div>
               <div class="rowContainer">
                 <div class="col1">&nbsp;</div>
-                <div class="col2"><input type="submit" name="login" value="Login" class="btn btn-warning"></div> 
+                <div class="col2"><input type="submit" color="blue" name="login" value="Login" class="btn btn-primary"></div> 
             </div>
             
         </form>

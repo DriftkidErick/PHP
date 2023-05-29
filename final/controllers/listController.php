@@ -26,23 +26,23 @@
     // If POST & SEARCH, only fetch the specified teams       
     if (isset($_POST["Search"]))
     {
-        $patientFirstName="";
-        $patientLastName="";
-        $patientMarried="";
+        $title="";
+        $author="";
+        $isbn="";
 
-        if ($_POST["fieldName"] == "patientFirstName")
+        if ($_POST["fieldName"] == "title")
         {
-            $patientFirstName = $_POST['fieldValue'];
+            $title = $_POST['fieldValue'];
         }
-        else if ($_POST["fieldName"] == "patientLastName")
+        else if ($_POST["fieldName"] == "author")
         {
-            $patientLastName = $_POST['fieldValue'];
+            $author = $_POST['fieldValue'];
         }
         else
         {
-            $patientMarried = $_POST['fieldValue'];
+            $isbn = $_POST['fieldValue'];
         }
-        $teamListing = $teamDatabase->searchTeams($patientFirstName, $patientLastName, $patientMarried);
+        $teamListing = $teamDatabase->searchTeams($title, $author, $isbn);
     }
     // If POST & DELETE, delete the requested team before fetching all teams       
     elseif (isset($_POST["deleteTeam"]))
