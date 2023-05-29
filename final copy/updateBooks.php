@@ -6,7 +6,7 @@
     include_once __DIR__ . "/controllers/header.php";
 ?>
 <p></p>
-<form class="form-horizontal" action="updateTeam.php" method="post">
+<form class="form-horizontal" action="updateBooks.php" method="post">
     
     <div class="panel panel-info">
     <div class="panel-heading"><h4><?= $action; ?> Book</h4></div>
@@ -55,11 +55,9 @@
       </div>
     </div>
 
-    
-
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary"><a href="./listTeams.php" style="color:white">View Books</a></div></button>
+        <button type="submit" class="btn btn-primary"><a href="./listBooks.php" style="color:white">View Books</a></div></button>
       </div>
     </div>
 
@@ -71,8 +69,6 @@
       </div>
       
 </div>
-
-
 
 
   </form>
